@@ -1,6 +1,9 @@
 import axios from "axios"
 import { useState } from "react"
 import cookie from "js-cookie"
+import Nav from "../components/Nav"
+
+
 
 
 const Home = () =>{
@@ -21,13 +24,15 @@ const Home = () =>{
             { email, password},
             config
         )
-        console.log({data})
+     cookie.set('token', data.token)
+     cookie.set('user', JSON.stringify(data?.user))
         
     }
 
     return (
         
         <div>
+            <Nav />
             <form onSubmit={SubmitHandler}>
                 <h1>Positive Health Disruptor</h1>
                 <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email"/>
