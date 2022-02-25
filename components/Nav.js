@@ -36,32 +36,38 @@ function Nav() {
 
         return (
         <div>
-            <nav className=" bg-amber-400">
+            <nav className="text-slate-100 bg-[#91466D] flex justify-between items-center w-full h-16 p-2 pl-20 pr-20">
                 <div >
                     <div>
-                        <h1>PHD</h1>
+                        <h1>LOGO</h1>
                     </div>
                 </div>
-                <ul >
-                    <li>
+                <ul className="flex  w-96 justify-between">
+                    <li className=" m-2">
                         <Link href='/fellow'><button>Fellow</button></Link>
                     </li>
-                    <li>
+                    <li className=" m-2"> 
                         <Link href='/mentor'><button>Mentor</button></Link>
                     </li>
-                    <li>
+                    <li className=" m-2">
                         <Link href='/profile'><button>Profile</button></Link>
                     </li>
                 </ul>
                 
-             
+                <div>
+                <div className=" w-36">
                 {user &&  user.firstname}
-
+                {user &&  user.lastname}
+                </div>
+                
+                
                 {user ? (
                     <div>
                         <botton onClick={logoutHandler} >Logout</botton>
                     </div>
                 ):(<></>) }
+                </div>
+                
             </nav>
         </div>
             
