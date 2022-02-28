@@ -7,7 +7,7 @@ export default class profile extends Component {
       
       <div >
         <Nav />
-        <div className="flex  w-full h-full min-h-screen justify-center items-center">
+        <div className="bg-gray-100 flex  w-full h-full min-h-screen justify-center items-center">
          <h1>profile</h1>
         </div>
       </div>

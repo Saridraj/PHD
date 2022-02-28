@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useState } from "react"
 
+
 const Register = () =>{
     const [ID, setID] = useState("")
     const [firstname, setFirstname] = useState("")
@@ -25,22 +26,38 @@ const Register = () =>{
         )
 
         console.log(data)
-
+        
 
         
     }
 
     return (
-        <div>
-            <form onSubmit={SubmitHandler}>
-                <h1>Register</h1>
-                <input value={ID} onChange={(e) => setID(e.target.value)} placeholder="ID"/>
-                <input value={firstname} onChange={(e) => setFirstname(e.target.value)} placeholder="Firstname"/>
-                <input value={lastname} onChange={(e) => setLastname(e.target.value)} placeholder="Lastname"/>
-                <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email"/>
-                <input value={password} onChange={(e) => setPassword(e.target.value)} placeholder="password"/>
-                <input value={role} onChange={(e) => setRole(e.target.value)} placeholder="role"/>
-                <button type="submit">Register</button>
+        <div className=" bg-gray-100 flex justify-center items-center w-full h-full min-h-screen">
+            <form onSubmit={SubmitHandler} className="bg-white flex flex-col w-96 h-4/6 p-6 ">
+                <div className="flex justify-center h-12 mb-4">
+                    <h1 className="text-[#91466D]">ลงทะเบียน</h1>
+                </div>
+                <div className=" h-12 mb-2 ">
+                    <input className="w-full h-full p-2 border-2 border-[#91466D]" value={ID} onChange={(e) => setID(e.target.value)} placeholder="ID"/>
+                </div>
+                <div className=" h-12 mb-2 ">
+                    <input className="w-full h-full p-2 border-2 border-[#91466D]" value={firstname} onChange={(e) => setFirstname(e.target.value)} placeholder="Firstname"/>
+                </div>
+                <div className=" h-12 mb-2 ">
+                    <input className="w-full h-full p-2 border-2 border-[#91466D]" value={lastname} onChange={(e) => setLastname(e.target.value)} placeholder="Lastname"/>
+                </div>
+                <div className=" h-12 mb-2 ">
+                    <input className="w-full h-full p-2 border-2 border-[#91466D]" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email"/>
+                </div>
+                <div className=" h-12 mb-2 ">
+                    <input className="w-full h-full p-2 border-2 border-[#91466D]" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="password"/> 
+                </div>
+                <div className=" h-12 mb-2 ">
+                <input className="w-full h-full p-2 border-2 border-[#91466D]" value={role} onChange={(e) => setRole(e.target.value)} placeholder="role"/>
+                </div>
+                <div className="flex justify-center">
+                    <button className="bg-[#91466D] h-12 w-24" type="submit"><p className="text-white">บันทึก</p></button>
+                </div>
             </form>
         </div>
     )
