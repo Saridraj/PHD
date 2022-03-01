@@ -52,7 +52,7 @@ const Home = () => {
                     </div>
                     <div className=" h-12 ">
                         {/* <div><label>Password</label></div> */}
-                        <input className="w-[350px] h-[48px] p-2 border-[1px] border-solid border-[#a0a0a0] rounded-lg" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+                        <input className="w-[350px] h-[48px] p-2 border-[1px] border-solid border-[#a0a0a0] rounded-lg" type="Password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
                     </div>
                     <div className=" h-12 ">
 
