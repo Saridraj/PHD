@@ -43,7 +43,7 @@ function Nav() {
                             <Link href="/profile"><button className="text-[30px] font-semibold">DASHBOARD</button></Link>
                         </div>
                     </div>
-                    <ul className="min-w-3/4  md:flex">
+                    <ul className="min-w-3/4 hidden md:flex">
                         <li className=" m-2">
                             <Link href='/fellow'><button>Fellow</button></Link>
                         </li>
