@@ -15,7 +15,6 @@ import { FiMenu, FiX } from 'react-icons/fi'
 function Nav() {
     const [click, setClick] = useState(false)
     const handleClick = () => setClick(!click)
-    const [nav, setNav] = useState(false)
 
     const { data: session } = useSession
 
@@ -33,63 +32,97 @@ function Nav() {
     const user = cookies?.user ? JSON.parse(cookies.user) : ""
 
 
-
     return (
         <div>
-            <nav className="text-[#91466b] bg-white flex justify-between items-center w-full h-[54px] p-2 pl-20 pr-20 drop-shadow-md">
+            <nav className="text-[#91466b] bg-white flex justify-between items-center w-full h-[54px] p-2  pl-10 md:pl-20  pr-10 md:pr-20 drop-shadow-md">
                 <div className="  flex justify-between items-center w-[600px]">
                     <div className="max-w-[500px] " >
                         <div>
-                            <Link href="/profile"><button className="text-[30px] font-semibold">DASHBOARD</button></Link>
+                            <Link href="/profile"><button className="mr-10 md:mr-5 text-[30px] font-semibold">DASHBOARD</button></Link>
                         </div>
                     </div>
-                    <ul className="min-w-3/4 hidden md:flex">
-                        <li className=" m-2">
-                            <Link href='/fellow'><button>Fellow</button></Link>
-                        </li>
-                        <li className=" m-2 ml-[30px]">
-                            <Link href='/mentor'><button>Mentor</button></Link>
-                        </li>
+                </div>
+                <div>
 
-                    </ul>
                 </div>
 
 
-                <div className="hidden md:flex ">
-                    <Link href="/profile">
-                        <div className="cursor-pointer flex min-w-[200px] bg-purple-100 rounded-[50px] mr-20 h-[45px] p-1 items-center">
-                            <div className="bg-[#91466b] w-10 h-10 rounded-[30px] mr-1">
+                {click ?(
+                                    <ul  className="md:flex md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 mt-[250px] md:mt-0 bg-white md:opacity-100 opacity-100  transition-[2s] ease-in duration-500   " >
+                                    <li className=" m-2 flex  items-center">
+                                        <Link href='/fellow'><button onClick={handleClick}>Fellow</button></Link>
+                                    </li>
+                                    <li className=" m-2 md:ml-[30px] flex  items-center">
+                                        <Link href='/mentor'><button onClick={handleClick}>Mentor</button></Link>
+                                    </li>
+                                    <li className="w-1 md:w-4 lg:w-40 xl:w-80   h-10">
+                                            
+                                    </li>
+                                    <li className=" lg:ml-20">
+                                        <Link onClick={handleClick} href="/profile">
+            
+                                            <div className="cursor-pointer flex w-[250px] md:max-w-[250px] bg-purple-100 rounded-[50px] mr-2 lg:mr-10 h-[45px] p-1 items-center">
+                                                <div className="bg-[#91466b] w-10 h-10 rounded-[30px]  mr-1">
+            
+                                                </div>
+                                                <div className="flex  ">
+                                                    <dix className="mr-2">{user && user.firstname}</dix>
+                                                    <div>{user && user.lastname}</div>
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    </li>
+                                    <li className="cursor-pointer flex  items-center w-[60px] ml-2 mt-2">
+                                        <div>
+                                            {user ? (
+                                                <div >
+                                                    <botton onClick={logoutHandler} >Log Out</botton>
+                                                </div>
+                                            ) : (<></>)}
+                                        </div>
+                                    </li>
+                                </ul>
+                
+                ):(
+                    <ul className="md:flex md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 mt-[200px] md:mt-0 bg-white md:opacity-100  top-[-400px] opacity-0 transition-[2s] ease-in-out duration-500" >
+                    <li className=" m-2 flex  items-center">
+                        <Link href='/fellow'><button>Fellow</button></Link>
+                    </li>
+                    <li className=" m-2 md:ml-[30px] flex  items-center">
+                        <Link href='/mentor'><button>Mentor</button></Link>
+                    </li>
+                    <li className="w-1 md:w-4 lg:w-40 xl:w-80  bg-red-400">
+                            
+                    </li>
+                    <li className=" lg:ml-20">
+                        <Link href="/profile">
 
+                            <div className="cursor-pointer flex w-[250px] md:max-w-[250px] bg-purple-100 rounded-[50px] mr-2 lg:mr-10 h-[45px] p-1 items-center">
+                                <div className="bg-[#91466b] w-10 h-10 rounded-[30px]  mr-1">
+
+                                </div>
+                                <div className="flex  ">
+                                    <dix className="mr-2">{user && user.firstname}</dix>
+                                    <div>{user && user.lastname}</div>
+                                </div>
                             </div>
-                            <div className="flex  ">
-                                <dix className="mr-2">{user && user.firstname}</dix>
-                                <div>{user && user.lastname}</div>
-                            </div>
+                        </Link>
+                    </li>
+                    <li className="cursor-pointer flex  items-center w-[60px] ">
+                        <div>
+                            {user ? (
+                                <div >
+                                    <botton onClick={logoutHandler} >Log Out</botton>
+                                </div>
+                            ) : (<></>)}
                         </div>
-                    </Link>
-                    <div className="cursor-pointer flex justify-between items-center ">
-                        {user ? (
-                            <div >
-                                <botton onClick={logoutHandler} >Logout</botton>
-                            </div>
-                        ) : (<></>)}
-                    </div>
-                    {click ? (
-                        <div >
-                            <ul className="min-w-3/4 flex">
-                                <li className=" m-2">
-                                    <Link href='/fellow'><button>Fellow</button></Link>
-                                </li>
-                                <li className=" m-2 ml-[30px]">
-                                    <Link href='/mentor'><button>Mentor</button></Link>
-                                </li>
+                    </li>
+                </ul>
+                )}
 
-                            </ul>
-                        </div>
-                    ) : (<></>)}
-                </div>
+               
 
-                <div className="flex md:hidden" onClick={handleClick}>
+                <div className="flex md:hidden text-[30px]" onClick={handleClick}>
                     {
                         click ? (
                             <FiX />
