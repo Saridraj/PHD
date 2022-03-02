@@ -118,7 +118,7 @@ function Nav() {
                         </ul>
 
                     ) : (
-                        <ul className="md:flex md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7  md:mt-0 bg-white md:opacity-0 opacity-100 duration-500 transition-all top-[-200px] " >
+                        <ul className="md:flex md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7  md:mt-0 bg-white md:opacity-0 opacity-0   top-[-200px] " >
                             <li className=" m-2 flex  items-center">
                                 <Link href='/fellow'><button>Fellow</button></Link>
                             </li>
