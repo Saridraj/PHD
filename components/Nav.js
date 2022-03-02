@@ -48,7 +48,7 @@ function Nav() {
 
 
                 {click ?(
-                                    <ul  className="md:flex md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 mt-[250px] md:mt-0 bg-white md:opacity-100 opacity-100  transition-all ease-in duration-500   " >
+                                    <ul  className="md:flex md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7  md:mt-0 bg-white md:opacity-100 opacity-100   transition-all ease-in duration-500  top-12  " >
                                     <li className=" m-2 flex  items-center">
                                         <Link href='/fellow'><button onClick={handleClick}>Fellow</button></Link>
                                     </li>
@@ -84,7 +84,7 @@ function Nav() {
                                 </ul>
                 
                 ):(
-                    <ul className="md:flex md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 mt-[200px] md:mt-0 bg-white md:opacity-100  opacity-0 transition-all top-[-200px] ease-in-out " >
+                    <ul className="md:flex md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7  md:mt-0 bg-white md:opacity-0 opacity-100 duration-500 transition-all top-[-200px] " >
                     <li className=" m-2 flex  items-center">
                         <Link href='/fellow'><button>Fellow</button></Link>
                     </li>
