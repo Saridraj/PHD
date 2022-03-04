@@ -34,7 +34,7 @@ function Nav() {
 
     return (
         <div>
-            <nav className="  text-[#91466b] bg-white flex justify-between items-center w-full h-[54px] p-2  pl-10 md:pl-20  pr-10 md:pr-20 drop-shadow-md">
+            <nav className="fixed text-[#91466b] bg-white flex justify-between items-center w-full h-[54px] p-2  pl-10 md:pl-20  pr-10 md:pr-20 drop-shadow-md">
                 <div className="  flex justify-between items-center w-[600px]">
                     <div className="max-w-[500px] " >
                         <div>
@@ -55,11 +55,11 @@ function Nav() {
                     <li className=" lg:ml-20">
                         <Link onClick={handleClick} href="/profile">
 
-                            <div className="cursor-pointer flex w-[250px] md:max-w-[250px] bg-purple-100 rounded-[50px] mr-2 lg:mr-10 h-[45px] p-1 items-center">
-                                <div className="bg-[#91466b] w-10 h-10 rounded-[30px]  mr-1">
+                            <div className="cursor-pointer flex  w-[250px] md:max-w-[250px] bg-purple-100 rounded-[50px] mr-2 lg:mr-10 h-[45px] p-1 items-center">
+                                <div className="bg-[#91466b] w-10 h-10 rounded-[30px]  ">
 
                                 </div>
-                                <div className="flex  ">
+                                <div className="flex w-[190px]  justify-center ">
                                     <dix className="mr-2">{user && user.firstname}</dix>
                                     <div>{user && user.lastname}</div>
                                 </div>

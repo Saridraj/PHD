@@ -7,7 +7,7 @@ connectDB()
 export default async (req, res) => {
     try{
         if (req.method === "POST") {
-            const { ID, firstname, lastname, email, password, role } = req.body
+            const { ID, prefix, firstname, lastname, email, password, role } = req.body
             const user = await User.findOne({email: email})
             
             if(user) {
@@ -17,6 +17,7 @@ export default async (req, res) => {
             const HashedPassword = await bcrypt.hash(password, 12)
             const newUser = await new User({ 
                 ID,
+                prefix,
                 firstname, 
                 lastname, 
                 email, 

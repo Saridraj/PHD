@@ -5,6 +5,10 @@ const userSchema = mongoose.Schema({
         type:String,
         unique: true,
     },
+    prefix:{
+        type:String,
+        unique: true,
+    },
     firstname:{
         type:String,
         required:[true,'Please add a name'],
@@ -28,7 +32,7 @@ const userSchema = mongoose.Schema({
     role:{
         type:String,
         default:"participant",
-        enum: ['participant','mentor','PHDteam','admin'],
+        enum: ['participant','mentor','NHFteam','admin'],
         
     },
     createdAt:{
