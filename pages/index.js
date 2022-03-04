@@ -28,6 +28,7 @@ const Home = () => {
         cookie.set('token', data.token)
         cookie.set('user', JSON.stringify(data?.user))
         Router.push('/profile');
+        console.log(user)
 
     }
 

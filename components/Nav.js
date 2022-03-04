@@ -34,7 +34,7 @@ function Nav() {
 
     return (
         <div>
-            <nav className="fixed text-[#91466b] bg-white flex justify-between items-center w-full h-[54px] p-2  pl-10 md:pl-20  pr-10 md:pr-20 drop-shadow-md">
+            <nav className="z-30 md:z-auto fixed text-[#91466b] bg-white flex justify-between items-center w-full h-[54px] p-2  pl-10 md:pl-20  pr-10 md:pr-20 drop-shadow-md">
                 <div className="  flex justify-between items-center w-[600px]">
                     <div className="max-w-[500px] " >
                         <div>
@@ -82,7 +82,7 @@ function Nav() {
 
                 <div className=" md:hidden">
                     {click ? (
-                        <ul className="md:flex md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7  md:mt-0 bg-white md:opacity-100 opacity-100   transition-all ease-in duration-500  top-12  " >
+                        <ul className="md:flex md:items-center  md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7  md:mt-0 bg-white md:opacity-100 opacity-100   transition-all ease-in duration-500  top-12  " >
                             <li className=" m-2 flex  items-center">
                                 <Link href='/fellow'><button onClick={handleClick}>Fellow</button></Link>
                             </li>

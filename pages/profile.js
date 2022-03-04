@@ -36,7 +36,7 @@ export default class profile extends Component {
 
           </div>
           <div className="ml-[350px]">
-            <div><h1 className="mt-14">profile</h1></div>
+            <div><h1 className="mt-14">fellowprofile</h1></div>
             <div className="w-96 h-96 bg-red-50"></div>
             <div className="w-96 h-96 bg-red-100"></div>
             <div className="w-96 h-96 bg-red-200"></div>
