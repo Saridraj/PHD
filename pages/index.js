@@ -3,6 +3,7 @@ import { useState } from "react"
 import cookie from "js-cookie"
 import { useSession, signOut } from "next-auth/react"
 import Router from 'next/router'
+import { parseCookies } from "nookies"
 
 
 
@@ -27,8 +28,33 @@ const Home = () => {
         )
         cookie.set('token', data.token)
         cookie.set('user', JSON.stringify(data?.user))
-        Router.push('/profile');
-        console.log(user)
+
+        const role = ('user'.role)
+        console.log(role);
+
+        // switch (role) {
+        //     case 'participant' :
+        //         Router.push('/profile/fellowProfile');
+        //         break;
+        //     case "mentor" :
+        //         Router.push('/profile/mentorProfile');
+        //         break;
+        //     case "admin" :
+        //         Router.push('/profile/adminProfile');
+        //         console.log(22)
+        //         break;   
+        // }
+
+        // if (role = 'participant') {
+        //     Router.push('/fellowProfile');
+        // } if (role = 'mentor') {
+        //     Router.push('/mentorProfile');
+        // } if (role = 'admin') {
+        //      Router.push('/adminProfile'); 
+        // } else  { Router.push('/visitorProfile'); }
+
+        Router.push('/fellowProfile');
+
 
     }
 
