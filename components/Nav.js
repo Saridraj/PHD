@@ -38,7 +38,7 @@ function Nav() {
                 <div className="  flex justify-between items-center w-[600px]">
                     <div className="max-w-[500px] " >
                         <div>
-                            <Link href="/profile"><button className="mr-10 md:mr-5 text-[30px] font-semibold">DASHBOARD</button></Link>
+                            <Link href="/fellowProfile"><button className="mr-10 md:mr-5 text-[30px] font-semibold">DASHBOARD</button></Link>
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@ function Nav() {
 
                     </li>
                     <li className=" lg:ml-20">
-                        <Link onClick={handleClick} href="/profile">
+                        <Link onClick={handleClick} href="/fellowProfile">
 
                             <div className="cursor-pointer flex  w-[250px] md:max-w-[250px] bg-purple-100 rounded-[50px] mr-2 lg:mr-10 h-[45px] p-1 items-center">
                                 <div className="bg-[#91466b] w-10 h-10 rounded-[30px]  ">
