@@ -7,7 +7,7 @@ const userSchema = mongoose.Schema({
     },
     prefix:{
         type:String,
-        unique: true,
+       
     },
     firstname:{
         type:String,

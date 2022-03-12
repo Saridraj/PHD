@@ -5,9 +5,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      color: {
-        primary: ''
-      },
+    
       fontFamily: {
          body: ['IBM Plex Sans Thai']
       }

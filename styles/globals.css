@@ -12,9 +12,9 @@
     h3 {
       @apply text-lg;
     }
-    a {
+    /* a {
       @apply text-blue-600 underline;
-    }
+    } */
     html {
       @apply font-body;
     }
