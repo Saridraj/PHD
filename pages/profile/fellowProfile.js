@@ -116,13 +116,13 @@ const fellowProfile = ({
         <div className="ml-[350px] bg-gray-100 w-full ">
           <div className="max-w-[800px] pl-10 pt-10"><h1 className="mt-14 text-[35px] leading-relaxed font-medium text-[#91466b]">{fellows.map((fellow) => ((fellow.project_name)))}</h1></div>
           <div className="flex max-w-[600px] h-auto pl-10 pt-10"><div className="w-[10px] h-auto bg-[#91466b] mr-4"></div><p className="text-[#91466b] text-left break-words">{fellows.map((fellow) => ((fellow.project_intro)))}</p></div>
-          <div className="flex pl-10 h-[80px] mt-3 ">
+          {/* <div className="flex pl-10 h-[80px] mt-3 ">
             <a href={window.opener.location=`${summaryDocs.map((summaryDoc) => ((summaryDoc.file)))}`} >
                 <button className="bg-[#91466b] text-white w-[200px] h-[35px] rounded-[20px] mr-3">เอกสารสรุปแนวคิด</button>
             </a>
             <div className="flex h-[35px] items-center "><p className="text-[#91466b]">อัปเดตล่าสุดเมื่อ</p>&nbsp;&nbsp;</div>
             <div className="flex h-[35px] items-center"><p className="text-[#91466b]">{summaryDocs.map((summaryDoc) => ((summaryDoc.Timestamp)))}</p></div>
-          </div>
+          </div> */}
           
           <ProgressReport />
           <Participation />
