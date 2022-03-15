@@ -158,8 +158,8 @@ export const getServerSideProps = async (context) => {
   const Avatar = `https://res.cloudinary.com/rise-impact/image/upload/c_fill,g_faces,w_300,h_300,q_100,r_max/v1647240756/PHDuser_avatar/${avatarID}`
   
   //Get data form DB
-  // const fellowData = await db.collection("fellows").find({ ID: ID }).toArray();
-  // const fellows = JSON.parse(JSON.stringify(fellowData))
+   const fellowData = await db.collection("fellows").find({ ID: ID }).toArray();
+   const fellows = JSON.parse(JSON.stringify(fellowData))
 
   // const summary = await db.collection("summarys").find({ ID: ID }).toArray();
   // const summaryDocs = JSON.parse(JSON.stringify(summary))
