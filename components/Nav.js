@@ -5,6 +5,7 @@ import { useSession, signOut } from "next-auth/react"
 import cookie from "js-cookie"
 import Router from 'next/router'
 import { FiMenu, FiX } from 'react-icons/fi'
+import Image from 'next/image'
 
 
 
@@ -15,7 +16,7 @@ function Nav() {
 
     const { data: session } = useSession
 
- 
+
 
     const logoutHandler = async () => {
         if (session) {
@@ -29,7 +30,10 @@ function Nav() {
     const cookies = parseCookies()
 
     const user = cookies?.user ? JSON.parse(cookies.user) : ""
-  
+    const avatarID = user.ID
+    //const ID = user.ID
+    //console.log(JSON.stringify(avatarID));
+    const Avatar = `https://res.cloudinary.com/rise-impact/image/upload/c_fill,g_faces,w_300,h_300,q_100,r_max/v1647240756/PHDuser_avatar/${avatarID}`
 
     return (
         <div>
@@ -37,7 +41,7 @@ function Nav() {
                 <div className="  flex justify-between items-center w-[600px]">
                     <div className="max-w-[500px] " >
                         <div>
-                            <Link  href="/profile"><button className="mr-10 md:mr-5 text-[30px] font-semibold">DASHBOARD</button></Link>
+                            <Link href="/profile"><button className="mr-10 md:mr-5 text-[30px] font-semibold">DASHBOARD</button></Link>
                         </div>
                     </div>
                 </div>
@@ -53,10 +57,13 @@ function Nav() {
                     </li>
                     <li className=" lg:ml-20">
                         <Link onClick={handleClick} href="/profile">
-
                             <div className="cursor-pointer flex  w-[250px] md:max-w-[250px] bg-purple-100 rounded-[50px] mr-2 lg:mr-10 h-[45px] p-1 items-center">
                                 <div className="bg-[#91466b] w-10 h-10 rounded-[30px]  ">
-
+                                    <Image className="w-10 h-10 rounded-[100px] bg-gray-200"
+                                        src={Avatar}
+                                        width={120}
+                                        height={120}
+                                    />
                                 </div>
                                 <div className="flex w-[190px]  justify-center ">
                                     <dix className="mr-2">{user && user.firstname}</dix>
@@ -181,3 +188,5 @@ function Nav() {
 
 
 export default Nav
+
+
