@@ -158,20 +158,20 @@ export const getServerSideProps = async (context) => {
   const Avatar = `https://res.cloudinary.com/rise-impact/image/upload/c_fill,g_faces,w_300,h_300,q_100,r_max/v1647240756/PHDuser_avatar/${avatarID}`
   
   //Get data form DB
-  const fellowData = await db.collection("fellows").find({ ID: ID }).toArray();
-  const fellows = JSON.parse(JSON.stringify(fellowData))
+  // const fellowData = await db.collection("fellows").find({ ID: ID }).toArray();
+  // const fellows = JSON.parse(JSON.stringify(fellowData))
 
-  const summary = await db.collection("summarys").find({ ID: ID }).toArray();
-  const summaryDocs = JSON.parse(JSON.stringify(summary))
+  // const summary = await db.collection("summarys").find({ ID: ID }).toArray();
+  // const summaryDocs = JSON.parse(JSON.stringify(summary))
 
-  const proposal = await db.collection("proposals").find({ ID: ID }).toArray();
-  const proposalDocs = JSON.parse(JSON.stringify(proposal))
+  // const proposal = await db.collection("proposals").find({ ID: ID }).toArray();
+  // const proposalDocs = JSON.parse(JSON.stringify(proposal))
 
-  const progress = await db.collection("progresses").find({ ID: ID }).toArray();
-  const progressDocs = JSON.parse(JSON.stringify(progress))
+  // const progress = await db.collection("progresses").find({ ID: ID }).toArray();
+  // const progressDocs = JSON.parse(JSON.stringify(progress))
 
-  const reflection = await db.collection("reflections").find({ ID: ID }).toArray();
-  const reflectionDocs = JSON.parse(JSON.stringify(reflection))
+  // const reflection = await db.collection("reflections").find({ ID: ID }).toArray();
+  // const reflectionDocs = JSON.parse(JSON.stringify(reflection))
 
   return {
     props: {
