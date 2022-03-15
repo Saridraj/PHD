@@ -178,10 +178,10 @@ export const getServerSideProps = async (context) => {
       fellows,
       ID,
       Avatar,
-      summaryDocs,
-      proposalDocs,
-      progressDocs,
-      reflectionDocs,
+      // summaryDocs,
+      // proposalDocs,
+      // progressDocs,
+      // reflectionDocs,
     }
   }
 }
