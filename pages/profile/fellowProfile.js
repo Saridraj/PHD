@@ -21,6 +21,8 @@ const fellowProfile = ({
   proposalDocs,
   progressDocs,
   reflectionDocs, 
+  progressDocAll,
+  reflectionDocAll,
 }) => {
   // const avatarID = ID
   // //const ID = user.ID
@@ -127,10 +129,13 @@ const fellowProfile = ({
           <ProgressReport />
           <Participation />
           <FellowDoc 
-            summaryDocs={summaryDocs} 
-            proposalDocs={proposalDocs} 
-            progressDocs={progressDocs}
-            reflectionDocs={reflectionDocs}
+            summaryDocs = {summaryDocs} 
+            proposalDocs = {proposalDocs} 
+            progressDocs = {progressDocs}
+            reflectionDocs = {reflectionDocs}
+            progressDocAll = {progressDocAll}
+            reflectionDocAll = {reflectionDocAll}
+            
           />
         </div>
 
@@ -161,17 +166,23 @@ export const getServerSideProps = async (context) => {
    const fellowData = await db.collection("fellows").find({ ID: ID }).toArray();
    const fellows = JSON.parse(JSON.stringify(fellowData))
 
-  const summary = await db.collection("summarys").find({ ID: ID }).toArray();
+  const summary = await db.collection("summarys").find({ ID: ID }).sort({Timestamp:-1}).limit(1).toArray();
   const summaryDocs = JSON.parse(JSON.stringify(summary))
 
-  const proposal = await db.collection("proposals").find({ ID: ID }).toArray();
+  const proposal = await db.collection("proposals").find({ ID: ID }).sort({Timestamp:-1}).limit(1).toArray();
   const proposalDocs = JSON.parse(JSON.stringify(proposal))
 
-  const progress = await db.collection("progresses").find({ ID: ID }).toArray();
+  const progress = await db.collection("progresses").find({ ID: ID }).sort({Timestamp:-1}).limit(1).toArray();
   const progressDocs = JSON.parse(JSON.stringify(progress))
 
-  const reflection = await db.collection("reflections").find({ ID: ID }).toArray();
+  const progressAll = await db.collection("progresses").find({ ID: ID }).sort({Timestamp:-1}).toArray();
+  const progressDocAll = JSON.parse(JSON.stringify(progressAll))
+
+  const reflection = await db.collection("reflections").find({ ID: ID }).sort({Timestamp:-1}).limit(1).toArray();
   const reflectionDocs = JSON.parse(JSON.stringify(reflection))
+
+    const reflectionAll = await db.collection("reflections").find({ ID: ID }).sort({Timestamp:-1}).toArray();
+  const reflectionDocAll = JSON.parse(JSON.stringify(reflectionAll))
 
   return {
     props: {
@@ -182,6 +193,9 @@ export const getServerSideProps = async (context) => {
       proposalDocs,
       progressDocs,
       reflectionDocs,
+      progressDocAll,
+      reflectionDocAll,
+
     }
   }
 }
