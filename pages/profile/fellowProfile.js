@@ -116,22 +116,22 @@ const fellowProfile = ({
         <div className="ml-[350px] bg-gray-100 w-full ">
           <div className="max-w-[800px] pl-10 pt-10"><h1 className="mt-14 text-[35px] leading-relaxed font-medium text-[#91466b]">{fellows.map((fellow) => ((fellow.project_name)))}</h1></div>
           <div className="flex max-w-[600px] h-auto pl-10 pt-10"><div className="w-[10px] h-auto bg-[#91466b] mr-4"></div><p className="text-[#91466b] text-left break-words">{fellows.map((fellow) => ((fellow.project_intro)))}</p></div>
-          {/* <div className="flex pl-10 h-[80px] mt-3 ">
-            <a href={window.opener.location=`${summaryDocs.map((summaryDoc) => ((summaryDoc.file)))}`} >
+          <div className="flex pl-10 h-[80px] mt-3 ">
+            <a href={`${summaryDocs.map((summaryDoc) => ((summaryDoc.file)))}`} target="_blank" rel="norefer noopener">
                 <button className="bg-[#91466b] text-white w-[200px] h-[35px] rounded-[20px] mr-3">เอกสารสรุปแนวคิด</button>
             </a>
             <div className="flex h-[35px] items-center "><p className="text-[#91466b]">อัปเดตล่าสุดเมื่อ</p>&nbsp;&nbsp;</div>
             <div className="flex h-[35px] items-center"><p className="text-[#91466b]">{summaryDocs.map((summaryDoc) => ((summaryDoc.Timestamp)))}</p></div>
-          </div> */}
+          </div>
           
           <ProgressReport />
           <Participation />
-          {/* <FellowDoc 
+          <FellowDoc 
             summaryDocs={summaryDocs} 
             proposalDocs={proposalDocs} 
             progressDocs={progressDocs}
             reflectionDocs={reflectionDocs}
-          /> */}
+          />
         </div>
 
       </div>
@@ -161,27 +161,27 @@ export const getServerSideProps = async (context) => {
    const fellowData = await db.collection("fellows").find({ ID: ID }).toArray();
    const fellows = JSON.parse(JSON.stringify(fellowData))
 
-  // const summary = await db.collection("summarys").find({ ID: ID }).toArray();
-  // const summaryDocs = JSON.parse(JSON.stringify(summary))
+  const summary = await db.collection("summarys").find({ ID: ID }).toArray();
+  const summaryDocs = JSON.parse(JSON.stringify(summary))
 
-  // const proposal = await db.collection("proposals").find({ ID: ID }).toArray();
-  // const proposalDocs = JSON.parse(JSON.stringify(proposal))
+  const proposal = await db.collection("proposals").find({ ID: ID }).toArray();
+  const proposalDocs = JSON.parse(JSON.stringify(proposal))
 
-  // const progress = await db.collection("progresses").find({ ID: ID }).toArray();
-  // const progressDocs = JSON.parse(JSON.stringify(progress))
+  const progress = await db.collection("progresses").find({ ID: ID }).toArray();
+  const progressDocs = JSON.parse(JSON.stringify(progress))
 
-  // const reflection = await db.collection("reflections").find({ ID: ID }).toArray();
-  // const reflectionDocs = JSON.parse(JSON.stringify(reflection))
+  const reflection = await db.collection("reflections").find({ ID: ID }).toArray();
+  const reflectionDocs = JSON.parse(JSON.stringify(reflection))
 
   return {
     props: {
       fellows,
       ID,
       Avatar,
-      // summaryDocs,
-      // proposalDocs,
-      // progressDocs,
-      // reflectionDocs,
+      summaryDocs,
+      proposalDocs,
+      progressDocs,
+      reflectionDocs,
     }
   }
 }

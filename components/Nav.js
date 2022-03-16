@@ -76,7 +76,7 @@ function Nav() {
                         <div>
                             {user ? (
                                 <div >
-                                    <botton onClick={logoutHandler} >Log Out</botton>
+                                    <button onClick={logoutHandler} >Log Out</button>
                                 </div>
                             ) : (<></>)}
                         </div>
@@ -116,7 +116,7 @@ function Nav() {
                                 <div>
                                     {user ? (
                                         <div >
-                                            <botton onClick={logoutHandler} >Log Out</botton>
+                                            <button onClick={logoutHandler} >Log Out</button>
                                         </div>
                                     ) : (<></>)}
                                 </div>
@@ -152,7 +152,7 @@ function Nav() {
                                 <div>
                                     {user ? (
                                         <div >
-                                            <botton onClick={logoutHandler} >Log Out</botton>
+                                            <button onClick={logoutHandler} >Log Out</button>
                                         </div>
                                     ) : (<></>)}
                                 </div>
